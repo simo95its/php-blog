@@ -1,0 +1,13 @@
+.navbar-logo {
+  height: 100%;
+}
+nav div ul li a {
+  font-weight: bold;
+}
+
+.navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover {
+    opacity: .7;
+}
+.btn-default:hover, .btn-default:focus {
+    opacity: .7;
+}
