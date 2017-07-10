@@ -66,7 +66,7 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 				$postSlug = slug($postTitle);
 
 				//insert into database
-				$stmt = $db->prepare('UPDATE blog_posts_seo SET postTitle = :postTitle, postSlug = :postSlug, postDesc = :postDesc, postCont = :postCont WHERE postID = :postID') ;
+				$stmt = $db->prepare('UPDATE blog_posts SET postTitle = :postTitle, postSlug = :postSlug, postDesc = :postDesc, postCont = :postCont WHERE postID = :postID') ;
 				$stmt->execute(array(
 					':postTitle' => $postTitle,
 					':postSlug' => $postSlug,
@@ -114,7 +114,7 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 
 		try {
 
-			$stmt = $db->prepare('SELECT postID, postTitle, postDesc, postCont FROM blog_posts_seo WHERE postID = :postID') ;
+			$stmt = $db->prepare('SELECT postID, postTitle, postDesc, postCont FROM blog_posts WHERE postID = :postID') ;
 			$stmt->execute(array(':postID' => $_GET['id']));
 			$row = $stmt->fetch();
 

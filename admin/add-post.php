@@ -45,7 +45,7 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 				$postSlug = slug($postTitle);
 
 				//insert into database
-				$stmt = $db->prepare('INSERT INTO blog_posts_seo (postTitle,postSlug,postDesc,postCont,postDate) VALUES (:postTitle, :postSlug, :postDesc, :postCont, :postDate)') ;
+				$stmt = $db->prepare('INSERT INTO blog_posts (postTitle,postSlug,postDesc,postCont,postDate) VALUES (:postTitle, :postSlug, :postDesc, :postCont, :postDate)') ;
 				$stmt->execute(array(
 					':postTitle' => $postTitle,
 					':postSlug' => $postSlug,
