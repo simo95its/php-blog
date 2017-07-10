@@ -9,7 +9,7 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 //show message from add / edit page
 if(isset($_GET['delpost'])){
 
-	$stmt = $db->prepare('DELETE FROM blog_posts_seo WHERE postID = :postID') ;
+	$stmt = $db->prepare('DELETE FROM blog_posts WHERE postID = :postID') ;
 	$stmt->execute(array(':postID' => $_GET['delpost']));
 
 	//delete post categories.
@@ -41,7 +41,7 @@ if(isset($_GET['delpost'])){
 				</tr>
 				<?php
 				try {
-					$stmt = $db->query('SELECT postID, postTitle, postDate FROM blog_posts_seo ORDER BY postID DESC');
+					$stmt = $db->query('SELECT postID, postTitle, postDate FROM blog_posts ORDER BY postID DESC');
 					while($row = $stmt->fetch()){
 						echo '<tr>';
 						echo '<td>'.$row['postTitle'].'</td>';

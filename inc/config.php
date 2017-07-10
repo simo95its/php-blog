@@ -33,17 +33,17 @@ $pages = [
   'blog' => '?page=blog',
   'about' => '?page=about',
   'contact' => '?page=contact',
-  'admin' => '/blog/admin/',
-  'admin_index' => '/blog/admin/index.php',
-  'login' => '/blog/admin/login.php',
-  'add_post' => '/blog/admin/add-post.php',
-  'add_category' => '/blog/admin/add_category.php',
+  'admin' => '/php-blog/admin/',
+  'admin_index' => '/php-blog/admin/index.php',
+  'login' => '/php-blog/admin/login.php',
+  'add_post' => '/php-blog/admin/add-post.php',
+  'add_category' => '/php-blog/admin/add_category.php',
   'add_user' => 'add-user.php',
-  'edit_post' => '/blog/admin/edit-post.php',
-  'edit_category' => '/blog/admin/edit_category.php',
-  'edit_user' => 'blog/admin/edit-user.php',
-  'categories' => '/blog/admin/categories.php',
-  'users' => '/blog/admin/users.php'
+  'edit_post' => '/php-blog/admin/edit-post.php',
+  'edit_category' => '/php-blog/admin/edit_category.php',
+  'edit_user' => 'php-blog/admin/edit-user.php',
+  'categories' => '/php-blog/admin/categories.php',
+  'users' => '/php-blog/admin/users.php'
 ];
 
 $navbar_label = [
@@ -65,4 +65,6 @@ $school = 'ITS-ICT Piemonte';
 $user = new User($db);
 
 $page = isset($_GET['page']) ? $_GET['page'] : "";
+
+include 'functions.php';
 ?>
